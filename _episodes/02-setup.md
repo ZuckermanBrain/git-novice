@@ -3,154 +3,42 @@ title: Setting Up Git
 teaching: 5
 exercises: 0
 questions:
-- "How do I get set up to use Git?"
+- "How do I get set up to use Git using the GitHub Desktop graphical user interface?"
 objectives:
-- "Configure `git` the first time it is used on a computer."
-- "Understand the meaning of the `--global` configuration flag."
+- "Configure GitHub Desktop the first time it is used on a computer."
 keypoints:
--   "Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine."
+-   "Use GitHub Desktop's dialogue prompts to configure a user name and email address. Customize which text editor you use under GitHub Desktop's *Preferences* pane."
 ---
 
-When we use Git on a new computer for the first time,
+When we use GitHub Desktop on a new computer for the first time,
 we need to configure a few things. Below are a few examples
 of configurations we will set as we get started with Git:
 
 *   our name and email address,
-*   what our preferred text editor is,
-*   and that we want to use these settings globally (i.e. for every project).
+*   and what our preferred text editor is (for the rest of this tutorial, this will be [Atom](https://atom.io/), but we will show you how to change this)
 
-On a command line, Git commands are written as `git verb options`,
-where `verb` is what we actually want to do and `options` is additional optional information which may be needed for the `verb`. So here is how
-Dracula sets up his new laptop:
+If you haven't set up a GitHub account already, please do so now by following the instructions [here](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account).  You will initially want to sign up for the free tier.  GitHub will send you a verification e-mail with a link that you should click on after setting up your account.  We also highly recommend that you set up two-factor authentication, which provides greater security for your account.  Instructions on how to set up two-factor authentication with GitHub can be found [here](https://help.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication).
 
-~~~
-$ git config --global user.name "Vlad Dracula"
-$ git config --global user.email "vlad@tran.sylvan.ia"
-~~~
-{: .language-bash}
+Once you are sure that your GitHub account is set up properly, open the GitHub Desktop application.  Click *Sign in to GitHub.com*.  Type in your username and password when prompted or alternatively use the *Sign in using your browser* link if you are already logged in using a web browser.  If you are using two-factor authentication, you will be asked to provide an authentication code from your phone at this point.
 
-Please use your own name and email address instead of Dracula's. This user name and email will be associated with your subsequent Git activity,
-which means that any changes pushed to
-[GitHub](https://github.com/),
-[BitBucket](https://bitbucket.org/),
-[GitLab](https://gitlab.com/) or
+![githubdesktopconfig](../fig/github-desktop-config.png)
+
+GitHub Desktop will then ask you to enter your name and email address.  This user name and email will be associated with your subsequent Git activity,
+which means that any changes to documents or code that you upload to
+[GitHub](https://github.com/) or
 another Git host server
 in a later lesson will include this information.
 
-For these lessons, we will be interacting with [GitHub](https://github.com/) and so the email address used should be the same as the one used when setting up your GitHub account. If you are concerned about privacy, please review [GitHub's instructions for keeping your email address private][git-privacy]. 
+The email address used should be the same as the one used when setting up your GitHub account unless you are concerned about privacy. If you do have privacy concerns, please review [GitHub's instructions for keeping your email address private][git-privacy].  If do you elect to use a private email address with GitHub, then use that same email address for the *Email* field (e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one).  Choosing to keep your email address private has the advantage that you will be less targeted by spammers, but with the caveat that other researchers will not be able to find contact information for you as readily.
 
->## Keeping your email private
->
->If you elect to use a private email address with GitHub, then use that same email address for the `user.email` value, e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one.
-{: .callout}
+![githubdesktopconfig2](../fig/github-desktop-config-2.png)
 
+## Changing Your Text Editor
 
-> ## Line Endings
->
-> As with other keys, when you hit <kbd>Return</kbd> on your keyboard,
-> your computer encodes this input as a character.
-> Different operating systems use different character(s) to represent the end of a line.
-> (You may also hear these referred to as newlines or line breaks.)
-> Because Git uses these characters to compare files,
-> it may cause unexpected issues when editing a file on different machines. 
-> Though it is beyond the scope of this lesson, you can read more about this issue 
-> [on this GitHub page](https://help.github.com/articles/dealing-with-line-endings/).
-{: .callout}
->
-> You can change the way Git recognizes and encodes line endings
-> using the `core.autocrlf` command to `git config`.
-> The following settings are recommended:
->
-> On macOS and Linux:
->
-> ~~~
-> $ git config --global core.autocrlf input
-> ~~~
-> {: .language-bash}
->
-> And on Windows:
->
-> ~~~
-> $ git config --global core.autocrlf true
-> ~~~
-> {: .language-bash}
-> 
+It is possible to reconfigure the text editor for GitHub Desktop whenever you want to change it.  To do so, navigate to the *Preferences* pane within the GitHub Desktop application.  Instructions for how to do this can be found [here](https://help.github.com/en/desktop/getting-started-with-github-desktop/configuring-basic-settings).
 
+Once you are in the *Preferences* pane, click on *Integrations* and then select your favorite text editor in the dropdown under *External Editor*.
 
-Dracula also has to set his favorite text editor, following this table:
-
-| Editor             | Configuration command                            |
-|:-------------------|:-------------------------------------------------|
-| Atom | `$ git config --global core.editor "atom --wait"`|
-| nano               | `$ git config --global core.editor "nano -w"`    |
-| BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`    |
-| Sublime Text (Mac) | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"` |
-| Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
-| Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
-| Notepad++ (Win, 32-bit install)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Notepad++ (Win, 64-bit install)    | `$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
-| Kate (Linux)       | `$ git config --global core.editor "kate"`       |
-| Gedit (Linux)      | `$ git config --global core.editor "gedit --wait --new-window"`   |
-| Scratch (Linux)       | `$ git config --global core.editor "scratch-text-editor"`  |
-| Emacs              | `$ git config --global core.editor "emacs"`   |
-| Vim                | `$ git config --global core.editor "vim"`   |
-| VS Code                | `$ git config --global core.editor "code --wait"`   |
-
-It is possible to reconfigure the text editor for Git whenever you want to change it.
-
-> ## Exiting Vim
->
-> Note that Vim is the default editor for many programs. If you haven't used Vim before and wish to exit a session without saving
-your changes, press <kbd>Esc</kbd> then type `:q!` and hit <kbd>Return</kbd>.
-> If you want to save your changes and quit, press <kbd>Esc</kbd> then type `:wq` and hit <kbd>Return</kbd>.
-{: .callout}
-
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
-to use the settings for every project, in your user account, on this computer.
-
-You can check your settings at any time:
-
-~~~
-$ git config --list
-~~~
-{: .language-bash}
-
-You can change your configuration as many times as you want: use the
-same commands to choose another editor or update your email address.
-
-> ## Proxy
->
-> In some networks you need to use a
-> [proxy](https://en.wikipedia.org/wiki/Proxy_server). If this is the case, you
-> may also need to tell Git about the proxy:
->
-> ~~~
-> $ git config --global http.proxy proxy-url
-> $ git config --global https.proxy proxy-url
-> ~~~
-> {: .language-bash}
->
-> To disable the proxy, use
->
-> ~~~
-> $ git config --global --unset http.proxy
-> $ git config --global --unset https.proxy
-> ~~~
-> {: .language-bash}
-{: .callout}
-
-> ## Git Help and Manual
->
-> Always remember that if you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
->
-> ~~~
-> $ git config -h
-> $ git config --help
-> ~~~
-> {: .language-bash}
->
-> While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
->
-{: .callout}
+![githubdesktoptexteditor](../fig/github-desktop-text-editor.png)
 
 [git-privacy]: https://help.github.com/articles/keeping-your-email-address-private/

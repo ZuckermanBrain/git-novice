@@ -38,6 +38,7 @@ to be shared can and should be stored in a version control system.
 >
 > In this lesson we learn how to use Git by using the [GitHub Desktop](https://desktop.github.com/) client and the [Atom](https://atom.io/) text editor.
 > You will need to install both of these applications before starting.
+> You will also need to sign up for a GitHub account using the instructions [here](https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account) if you do not have one already.  We will also go over how to do this during the lesson.
 > No previous experience with a command line interface is necessary.
 >
 {: .prereq}
