@@ -94,22 +94,6 @@ working in teams or not, because it is
     and, "come on this really has to be the last version" to motivate version
     control as a better way to collaborate and as a better way to back work up.
 
-## [Setting Up Git]({{ page.root }}{% link _episodes/02-setup.md %})
-
-*   We suggest instructors and students use `nano` as the text editor for this
-    lessons because
-
-    *   it runs in all three major operating systems,
-    *   it runs inside the shell (switching windows can be confusing to students), and
-    *   it has shortcut help at the bottom of the window.
-
-    Please point out to students during setup that they can and should use
-    another text editor if they're already familiar with it.
-
-*   When setting up Git, be very clear what learners have to enter: it is
-    common for them to edit the instructor's details (e.g. email).  Check at
-    the end using `git config --list`.
-
 ## [Creating a Repository]({{ page.root }}{% link _episodes/03-create.md %})
 
 *   When you do `git status`, Mac users may see a `.DS_Store` file showing as
