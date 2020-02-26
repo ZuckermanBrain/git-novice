@@ -276,18 +276,16 @@ particular set of files in `.gitignore`.
 *  Keep in mind that depending on the Git version used, the outputs for
    `git push` and `git pull` can vary slightly.
 
-## [Open Science]({{ page.root }}{% link _episodes/10-open.md %})
-
-## [Licensing]({{ page.root }}{% link _episodes/11-licensing.md %})
+## [Licensing]({{ page.root }}{% link _episodes/10-licensing.md %})
 
 We teach about licensing because questions about who owns what, or can use
 what, arise naturally once we start talking about using public services like
 GitHub to store files. Also, the discussion gives learners a chance to catch
 their breath after what is often a frustrating couple of hours.
 
-## [Citation]({{ page.root }}{% link _episodes/12-citation.md %})
+## [Citation]({{ page.root }}{% link _episodes/11-citation.md %})
 
-## [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %})
+## [Hosting]({{ page.root }}{% link _episodes/12-hosting.md %})
 
 A common concern for learners is having their work publicly available on
 GitHub.  While we encourage open science, sometimes private repos are the
