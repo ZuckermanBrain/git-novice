@@ -7,156 +7,46 @@ questions:
 objectives:
 - "Create a local Git repository."
 - "Describe the purpose of the `.git` directory."
+- "Convert an existing folder into a Git repository."
 keypoints:
-- "`git init` initializes a repository."
+- "You can initialize a git repository by clicking on *New Repository* under the *File* dropdown or typing <kbd>Ctrl</kbd>-<kbd>N</kbd>."
 - "Git stores all of its repository data in the `.git` directory."
 ---
 
+Now that we've configured GitHub Desktop to work with our account, let's create our first [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store different versions of our files by keeping track of the differences between text documents.  Click on *New Repository* under the *File* menu or type <kbd>Ctrl</kbd>-<kbd>N</kbd>.  You will now be presented with a prompt with a number of fields (such as the repository name).  In the example below, we will *initialize* a repository named "Big Science".  [Initialization]({{ page.root }}{% link reference.md %}#initialization) is the term that Git uses to indicate that it will start tracking changes amongst files in a folder.  
 
+Note that GitHub Desktop automatically replaces spaces with hyphens in repository names.  We can also tell GitHub Desktop to create the repository with a Read Me document, a canned software license, and a file that tells Git to **not** track certain files (*Git Ignore*).  We will be discussing software licensing and blacklisting files later on in more detail.
 
-First, let's create a directory in `Desktop` folder for our work and then move into that directory:
+![githubdesktopinit](../fig/github-desktop-init.png)
 
-~~~
-$ cd ~/Desktop
-$ mkdir planets
-$ cd planets
-~~~
-{: .language-bash}
+Clicking on *Create Repository* should bring you to the following screen:
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store versions of our files:
+![githubdesktopinit2](../fig/github-desktop-init-2.png)
 
-~~~
-$ git init
-~~~
-{: .language-bash}
+Click the button that says *Show in Finder* or *Show in File Explorer*.  Notice that your new repository lives within a folder named *GitHub* that is nested within your home directory.  
 
-It is important to note that `git init` will create a repository that
-includes subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
-repository are completely separate processes.
+Now, click the button that says *Open in Atom*.  This will open up the project directory in the Atom text editor.
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+![atomemptyproject](../fig/atom-empty-project.png)
 
-~~~
-$ ls
-~~~
-{: .language-bash}
+On the lefthand side of the Atom window, there is a *Project* pane, which contains a file browser for all documents within your Git repository.  You may notice that there is a directory within the *Project* pane named `.git` that is not visible in either the Finder or the Windows File Explorer.  Git uses this special hidden folder as a database that stores all the information about changes that have been made within the project.
+If we ever delete the `.git` folder, we will lose the project's history.
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+If we click the *Git* button in the lower righthand corner, we can see that Git is already keeping track of which files have changed and which have not.  Changes to a file that git is not sure if you want to keep are referred to as [unstaged]({{ page.root }}{% link reference.md %}#staging).  Currently, there are no changes to the project, so Git reports no news.  We will make some changes later on to show how saving changes to the hidden database stored in the `.git` folder works.
 
-~~~
-$ ls -a
-~~~
-{: .language-bash}
+![atomemptyproject2](../fig/atom-empty-project-2.png)
 
-~~~
-.	..	.git
-~~~
-{: .output}
+## Tracking Folders that Already Exist with Git
 
-Git uses this special subdirectory to store all the information about the project,
-including all files and sub-directories located within the project's directory.
-If we ever delete the `.git` subdirectory,
-we will lose the project's history.
+Now suppose, however, that we already have a folder filled with previously untracked documents that we want to start tracking now.  We can start tracking the contents of this folder by navigating to *File* within GitHub Desktop, followed by *Add Local Repository* or by typing <kbd>Ctrl</kbd>-<kbd>O</kbd>.  Click *Choose* and navigate to the folder whose contents you want to track.  Click the blue *create a repository* hyperlink.  You should then receive the same *Create a New Repository* dialogue from before.  Click *Create Repository* again.
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+![githubdesktoppreviousfolder](../fig/github-desktop-previous-folder.png)
 
-~~~
-$ git status
-~~~
-{: .language-bash}
-~~~
-On branch master
-
-Initial commit
-
-nothing to commit (create/copy files and use "git add" to track)
-~~~
-{: .output}
-
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
-
-> ## Places to Create Git Repositories
+> ## Don't Initialize Git Repositories within Git Repositories
 >
-> Along with tracking information about planets (the project we have already created),
-> Dracula would also like to track information about moons.
-> Despite Wolfman's concerns, Dracula creates a `moons` project inside his `planets`
-> project with the following sequence of commands:
->
-> ~~~
-> $ cd ~/Desktop   # return to Desktop directory
-> $ cd planets     # go into planets directory, which is already a Git repository
-> $ ls -a          # ensure the .git subdirectory is still present in the planets directory
-> $ mkdir moons    # make a subdirectory planets/moons
-> $ cd moons       # go into moons subdirectory
-> $ git init       # make the moons subdirectory a Git repository
-> $ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
-> ~~~
-> {: .language-bash}
->
-> Is the `git init` command, run inside the `moons` subdirectory, required for
-> tracking files stored in the `moons` subdirectory?
->
-> > ## Solution
-> >
-> > No. Dracula does not need to make the `moons` subdirectory a Git repository
-> > because the `planets` repository will track all files, sub-directories, and
-> > subdirectory files under the `planets` directory.  Thus, in order to track
-> > all information about moons, Dracula only needed to add the `moons` subdirectory
-> > to the `planets` directory.
-> >
-> > Additionally, Git repositories can interfere with each other if they are "nested":
-> > the outer repository will try to version-control
-> > the inner repository. Therefore, it's best to create each new Git
-> > repository in a separate directory. To be sure that there is no conflicting
-> > repository in the directory, check the output of `git status`. If it looks
-> > like the following, you are good to go to create a new repository as shown
-> > above:
-> >
-> > ~~~
-> > $ git status
-> > ~~~
-> > {: .language-bash}
-> > ~~~
-> > fatal: Not a git repository (or any of the parent directories): .git
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-> ## Correcting `git init` Mistakes
-> Wolfman explains to Dracula how a nested repository is redundant and may cause confusion
-> down the road. Dracula would like to remove the nested repository. How can Dracula undo
-> his last `git init` in the `moons` subdirectory?
->
-> > ## Solution -- USE WITH CAUTION!
-> >
-> > ### Background
-> > Removing files from a git repository needs to be done with caution. To remove files from the working tree and not from your working directory, use
-> > ~~~
-> > $ rm filename
-> > ~~~
-> > {: .language-bash}
-> >
-> > The file being removed has to be in sync with the branch head with no updates. If there are updates, the file can be removed by force by using the `-f` option. Similarly a directory can be removed from git using `rm -r dirname` or `rm -rf dirname`.
-> >
-> > ### Solution
-> > Git keeps all of its files in the `.git` directory.
-> > To recover from this little mistake, Dracula can just remove the `.git`
-> > folder in the moons subdirectory by running the following command from inside the `planets` directory:
-> >
-> > ~~~
-> > $ rm -rf moons/.git
-> > ~~~
-> > {: .language-bash}
-> >
-> > But be careful! Running this command in the wrong directory, will remove
-> > the entire Git history of a project you might want to keep. Therefore, always check your current directory using the
-> > command `pwd`.
-> {: .solution}
-{: .challenge}
+> The database within the hidden `.git` folder tracks any and all files both within a folder and within the subfolders within that folder.
+> Git assumes that there is only one `.git` folder at the top level of any set of nested folders on your drive.
+> If there are two or more `.git` folders (e.g., one `.git` folder in the main project folder and then another `.git` within a subfolder), Git will become confused.  You can fix this by deleting any `.git` directories in nested folders using Atom.  Within Atom, right-click on the extra `.git` directories and click *Delete*.
+{: .callout}
+
+![githubdesktopoopsnested](../fig/github-desktop-oops-nested.png)

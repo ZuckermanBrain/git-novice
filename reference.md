@@ -36,6 +36,9 @@ HTTP
 :   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
     on the World Wide Web.
 
+initialization
+:   The step in the Git workflow where you tell it to start watching for changes in files.
+
 merge
 :   (a repository): To reconcile two sets of changes to a
     [repository](#repository).
@@ -66,6 +69,9 @@ SHA-1
     message), including the identifiers of all commits of preceding changes. This makes Git commit IDs virtually unique.
     I.e., the likelihood that two commits made independently, even of the same change, receive the same ID is exceedingly
     small.
+
+staging
+:   The step in the Git workflow where you tell Git which changes you want to keep and which changes you don't want to keep track of.  Changes that you have not told Git to keep are said to be *unstaged*.
 
 SSH
 :   The Secure Shell [protocol](#protocol) used for secure communication between computers.
