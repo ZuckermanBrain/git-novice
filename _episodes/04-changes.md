@@ -18,179 +18,74 @@ keypoints:
 - "Write a commit message that accurately describes your changes."
 ---
 
-First let's make sure we're still in the right directory.
-You should be in the `planets` directory.
+Let's return to the repository we just created (*Big-Science*) and start tracking changes to a hypothetical article that we'd like to get published within the next couple of months.
 
-~~~
-$ cd ~/Desktop/planets
-~~~
-{: .language-bash}
+First, let's right-click on *Big-Science* in the left pane followed by *New File*.  Alternatively, you can type <kbd>a</kbd> while inside the Atom window.
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
-We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create/) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+![atomnewdoc](../fig/atom-new-doc.png)
 
-~~~
-$ nano mars.txt
-~~~
-{: .language-bash}
+You will then be prompted for a filename to use for the document you want to create.  In this example, we'll use `article.txt`.
 
-Type the text below into the `mars.txt` file:
+![atomnewdoc2](../fig/atom-new-doc-2.png)
 
-~~~
-Cold and dry, but everything is my favorite color
-~~~
+Now, type some text into your new article:
 
-Let's first verify that the file was properly created by running the list command (`ls`):
+![atomnewdoc3](../fig/atom-new-doc-3.png)
 
+Notice that in the right pane of the text editor, Git has noticed that the document has changed.  As mentioned earlier, when changes are made to a file or a new file is created, and Git is unsure if the changes are meant to be enduring the file is said to be in an [unstaged]({{ page.root }}{% link reference.md %}#staging) state.
 
-~~~
-$ ls
-~~~
-{: .language-bash}
+> ## The Git Staging Area and Commits: A Photography Metaphor
+>
+> You can think of staging as similar to assembling a group of people
+> for a photograph.  For certain photos, you may only want to highlight certain
+> groups of people (e.g., separating people by grade or extracurricular in your
+> high school yearbook).  Every time you move changed files from being unstaged
+> into the staging area, it's as though you are putting together a logical grouping
+> of people within a camera frame.
+>
+> In Git's terminology, [committing]({{ page.root }}{% link reference.md %}#commit) is the act
+> of taking changes that have been staged and then confirming that those changes (which are
+> also referred to as a [changeset]({{ page.root }}{% link reference.md %}#changeset)) are
+> changes that we want to have recorded in the history of edits that we have made to a document
+> or computer program.  Essentially, committing staged changes in a Git repository is
+> like taking a photograph and then adding it to a chronological album.
+>
+> Conceptually, this can be represented in the diagram below, where `git add` indicates
+> the transition between unstaged and staged files and `git commit` indicates the transition
+> between staged and committed files.  Throughout this process, the `.git` directory
+> we discussed earlier is analogous to the aforementioned chronological album.
+{: .callout}
 
-~~~
-mars.txt
-~~~
-{: .output}
+![The Git Staging Area](../fig/git-staging-area.svg)
 
+We can stage files that have changed in out Git repository by right-clicking on the file on the right pane and then clicking *Stage*.  Alternatively, we can select the file the in the right pane by clicking on it and then type <kbd>Enter</kbd> or <kbd>Return</kbd> to stage it.
 
-`mars.txt` contains a single line, which we can see by running:
+![atomstaging](../fig/atom-staging.png)
 
-~~~
-$ cat mars.txt
-~~~
-{: .language-bash}
+Once the file is staged, it will be listed under the *Staged Changes* section of the Git pane.
 
-~~~
-Cold and dry, but everything is my favorite color
-~~~
-{: .output}
+![atomstaging2](../fig/atom-staging-2.png)
 
-If we check the status of our project again,
-Git tells us that it's noticed the new file:
-
-~~~
-$ git status
-~~~
-{: .language-bash}
-
-~~~
-On branch master
-
-Initial commit
-
-Untracked files:
-   (use "git add <file>..." to include in what will be committed)
-
-	mars.txt
-nothing added to commit but untracked files present (use "git add" to track)
-~~~
-{: .output}
-
-The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
-We can tell Git to track a file using `git add`:
-
-~~~
-$ git add mars.txt
-~~~
-{: .language-bash}
-
-and then check that the right thing happened:
-
-~~~
-$ git status
-~~~
-{: .language-bash}
-
-~~~
-On branch master
-
-Initial commit
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-	new file:   mars.txt
-
-~~~
-{: .output}
-
-Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't recorded these changes as a commit yet.
-To get it to do that,
-we need to run one more command:
-
-~~~
-$ git commit -m "Start notes on Mars as a base"
-~~~
-{: .language-bash}
-
-~~~
-[master (root-commit) f22b25e] Start notes on Mars as a base
- 1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
-~~~
-{: .output}
-
-When we run `git commit`,
-Git takes everything we have told it to save by using `git add`
-and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit]({{ page.root }}{% link reference.md %}#commit)
-(or [revision]({{ page.root }}{% link reference.md %}#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
-
-We use the `-m` flag (for "message")
-to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
-If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured as `core.editor`)
-so that we can write a longer message.
+If we've decided that these changes are changes we want recorded, then we can create a [commit]({{ page.root }}{% link reference.md %}#commit)
+(or [revision]({{ page.root }}{% link reference.md %}#revision)) by typing in a descriptive message and
+pressing *Commit to master*.
 
 [Good commit messages][commit-messages] start with a brief (<50 characters) statement about the
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
-If we run `git status` now:
+![atomcommit](../fig/atom-commit.png)
 
-~~~
-$ git status
-~~~
-{: .language-bash}
+If we decide that we actually don't want to keep track of a change, we can also right-click on a file in the staging area and unstage it.  If we accidentally make a commit that we don't want, Git also gives us the ability
+to undo that commit by clicking the undo button in the lower right corner.
 
-~~~
-On branch master
-nothing to commit, working directory clean
-~~~
-{: .output}
+After we've committed our changes, we can navigate back to the GitHub Desktop application,
+click on the history tab and see a history of each commit that we've made, and the lines of
+text that we added or subtracted from our text file or program.
 
-it tells us everything is up to date.
-If we want to know what we've done recently,
-we can ask Git to show us the project's history using `git log`:
+![githubdesktophistory](../fig/github-desktop-history.png)
 
-~~~
-$ git log
-~~~
-{: .language-bash}
-
-~~~
-commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
-Date:   Thu Aug 22 09:51:46 2013 -0400
-
-    Start notes on Mars as a base
-~~~
-{: .output}
-
-`git log` lists all commits  made to a repository in reverse chronological order.
-The listing for each commit includes
-the commit's full identifier
-(which starts with the same characters as
-the short identifier printed by the `git commit` command earlier),
-the commit's author,
-when it was created,
-and the log message Git was given when the commit was created.
+If you look next the text that says *John Pellman committed*, you'll notice a short alphanumeric code (such as `121ea64`).  This code is a unique identifier for each commit that is made in the Git repository.
 
 > ## Where Are My Changes?
 >
@@ -333,27 +228,7 @@ where it keeps track of things that have been added to
 the current [changeset]({{ page.root }}{% link reference.md %}#changeset)
 but not yet committed.
 
-> ## Staging Area
->
-> If you think of Git as taking snapshots of changes over the life of a project,
-> `git add` specifies *what* will go in a snapshot
-> (putting things in the staging area),
-> and `git commit` then *actually takes* the snapshot, and
-> makes a permanent record of it (as a commit).
-> If you don't have anything staged when you type `git commit`,
-> Git will prompt you to use `git commit -a` or `git commit --all`,
-> which is kind of like gathering *everyone* to take a group photo!
-> However, it's almost always better to
-> explicitly add things to the staging area, because you might
-> commit changes you forgot you made. (Going back to the group photo simile,
-> you might get an extra with incomplete makeup walking on
-> the stage for the picture because you used `-a`!)
-> Try to stage things manually,
-> or you might find yourself searching for "git undo commit" more
-> than you would like!
-{: .callout}
 
-![The Git Staging Area](../fig/git-staging-area.svg)
 
 Let's watch as our changes to a file move from our editor
 to the staging area
@@ -763,7 +638,7 @@ repository (`git commit`):
 > >
 > > ~~~
 > > $ git add me.txt
-> > $ git commit -m "Add biography file" 
+> > $ git commit -m "Add biography file"
 > > ~~~
 > > {: .language-bash}
 > >
