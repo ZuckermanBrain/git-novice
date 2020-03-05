@@ -136,12 +136,12 @@ working in teams or not, because it is
 *   This is a good moment to show a log within a Git GUI. If you skip it
     because you're short on time, show it once in GitHub.
 
-## [Ignoring Things]({{ page.root }}{% link _episodes/06-ignore.md %})
+## [Ignoring Things]({{ page.root }}{% link _episodes/05-ignore.md %})
 
 Just remember that you can use wildcards and regular expressions to ignore a
 particular set of files in `.gitignore`.
 
-## [Remotes in GitHub]({{ page.root }}{% link _episodes/07-github.md %})
+## [Remotes in GitHub]({{ page.root }}{% link _episodes/06-github.md %})
 
 *   Make it clear that Git and GitHub are not the same thing: Git is an open
     source version control tool, GitHub is a company that hosts Git
