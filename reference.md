@@ -32,6 +32,8 @@ conflict
     Helping users [resolve](#resolve) conflicts
     is one of version control's major tasks.
 
+fetch
+:   The act of downloading summaries of events in the Git history without actually downloading the changes themselves.
 HTTP
 :   The Hypertext Transfer [Protocol](#protocol) used for sharing web pages and other data
     on the World Wide Web.
@@ -42,6 +44,14 @@ initialization
 merge
 :   (a repository): To reconcile two sets of changes to a
     [repository](#repository).
+
+pull
+:   (a repository): To copy changes from a [remote](#remote) repository
+    to a local [repository](#repository).    
+
+push
+:   (a repository): To copy changes from a local
+    [repository](#repository) to a [remote](#remote) repository.
 
 protocol
 :   A set of rules that define how one computer communicates with another.
