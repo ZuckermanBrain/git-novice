@@ -11,50 +11,46 @@ keypoints:
 - "The `.gitignore` file tells Git what files to ignore."
 ---
 
-What if we have files that we do not want Git to track for us,
-like backup files created by our editor
-or intermediate files created during data analysis?
-Let's create a few dummy files:
+Generally speaking, Git does not handle files that are not text-based.
+This is because Git operates by storing the accumulated differences between lines of text
+as a file is changed, and assumes that the data contained within a file is text-based.
 
-~~~
-$ mkdir results
-$ touch a.dat b.dat c.dat results/a.out results/b.out
-~~~
-{: .language-bash}
+While it is possible to make comparisons of differences in lines of the binary 0s and 1s
+present in non-text files, such differences are irregular, and incur substantial overhead that
+can make Git very slow.
 
-and see what Git says:
+For this reason, unless you are using a specialized extension like [git-annex](https://git-annex.branchable.com/)/[DataLad](https://www.datalad.org/)
+or [git-lfs](https://git-lfs.github.com/), you will want to tell your Git repository to ignore large
+binary files (such as TIFFs, NifTIs, HDF5, and other scientific data formats).  A full treatment of
+Git extensions that deal with binary data is out of scope for the present session, though you may want
+to keep the extensions mentioned above if tracking changes to large, non-text datasets is of interest to you.
 
-~~~
-$ git status
-~~~
-{: .language-bash}
+There may also be other files that we do not want Git to track for us,
+like backup files created by our editor,
+or intermediate files created during data analysis.
 
-~~~
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+To see how we would deal with these, let's first create a few dummy files.  Right-click on *Big-Science* in the left pane to make a new folder named *results*.
+Then, create 2 output files within *results*.  Name these `a.out` and `b.out`.
+Finally, create 3 data files named `a.dat`, `b.dat`, and `c.dat` and nest them under the main
+directory.
 
-	a.dat
-	b.dat
-	c.dat
-	results/
+When you're done, your Atom window should look something like this:
 
-nothing added to commit but untracked files present (use "git add" to track)
-~~~
-{: .output}
+![atomignore1](../fig/atom-ignore-1.png)
 
-Putting these files under version control would be a waste of disk space.
+Let's pretend that these files are all in binary formats, and that we do not want them to be
+tracked by Git.  In this scenario, we're not interested in tracking changes to data,
+we're more interested in tracking changes to our paper (or perhaps some code).
+
+We can tell Git to not track files within our project by creating a special file in the root directory of our project called `.gitignore`.
+
+Were these files under version control would be a waste of disk space.
 What's worse,
 having them all listed could distract us from changes that actually matter,
 so let's tell Git to ignore them.
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
-
-~~~
-$ nano .gitignore
-$ cat .gitignore
-~~~
-{: .language-bash}
+We can paste the following [glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) into
+`.gitignore` (Git uses its own flavor of glob patterns described [here](https://git-scm.com/docs/gitignore#_pattern_format)):   
 
 ~~~
 *.dat
@@ -62,29 +58,16 @@ results/
 ~~~
 {: .output}
 
-These patterns tell Git to ignore any file whose name ends in `.dat`
+Glob patterns are a way to select multiple files whose filenames conform to a specific textual structure.
+They tell Git to ignore any file whose name ends in `.dat`
 and everything in the `results` directory.
-(If any of these files were already being tracked,
-Git would continue to track them.)
+If any of these files were already being tracked,
+Git would continue to track them.
 
 Once we have created this file,
-the output of `git status` is much cleaner:
+the unstaged changes panel is much cleaner:
 
-~~~
-$ git status
-~~~
-{: .language-bash}
-
-~~~
-On branch master
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	.gitignore
-
-nothing added to commit but untracked files present (use "git add" to track)
-~~~
-{: .output}
+![atomignore2](../fig/atom-ignore-2.png)
 
 The only thing Git notices now is the newly-created `.gitignore` file.
 You might think we wouldn't want to track it,
@@ -92,56 +75,26 @@ but everyone we're sharing our repository with will probably want to ignore
 the same things that we're ignoring.
 Let's add and commit `.gitignore`:
 
-~~~
-$ git add .gitignore
-$ git commit -m "Ignore data files and the results folder."
-$ git status
-~~~
-{: .language-bash}
+![atomignore3](../fig/atom-ignore-3.png)
+
+However, what if we actually want to track `b.dat` while still ignoring the other
+files that end in `.dat`?  You can tell `.gitignore` to continue tracking files
+that would otherwise be ignored by adding a line starting with `!` followed by the file's
+name or another glob pattern:
 
 ~~~
-On branch master
-nothing to commit, working directory clean
+*.dat
+!b.dat
+results/
 ~~~
 {: .output}
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
+The patterns defined in `.gitignore` are considered in sequence, which means that `!b.bat` will
+override `*.dat` since it is defined later.
 
-~~~
-$ git add a.dat
-~~~
-{: .language-bash}
+After saving `.gitignore`, we see that `b.dat` now shows up again in the unstaged changes panel:
 
-~~~
-The following paths are ignored by one of your .gitignore files:
-a.dat
-Use -f if you really want to add them.
-~~~
-{: .output}
-
-If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something. For example,
-`git add -f a.dat`.
-We can also always see the status of ignored files if we want:
-
-~~~
-$ git status --ignored
-~~~
-{: .language-bash}
-
-~~~
-On branch master
-Ignored files:
- (use "git add -f <file>..." to include in what will be committed)
-
-        a.dat
-        b.dat
-        c.dat
-        results/
-
-nothing to commit, working directory clean
-~~~
-{: .output}
+![atomignore4](../fig/atom-ignore-4.png)
 
 > ## Ignoring Nested Files
 >
@@ -183,7 +136,6 @@ nothing to commit, working directory clean
 >
 > How would you ignore all `.dat` files in your root directory except for
 > `final.dat`?
-> Hint: Find out what `!` (the exclamation point operator) does
 >
 > > ## Solution
 > >
