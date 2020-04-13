@@ -82,7 +82,7 @@ of the centralized copy of your repository:
 > from HTTPS to SSH.  SSH is alternative way to download and upload data, which is a bit more secure.  
 > It is also necessary if you want to secure your account using [two-factor authentication](https://help.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa) Generally,
 > we use HTTPS because it does not require additional configuration.  After the workshop you may want to set up
-> SSH access, which is a bit more secure, by following tutorial from [GitHub](https://help.github.com/articles/generating-ssh-keys).
+> SSH access, which is a bit more secure, by following this tutorial from [GitHub](https://help.github.com/articles/generating-ssh-keys).
 {: .callout}
 
 One issue with a remote repository is that you may have uploaded changes from one computer that don't exist on
