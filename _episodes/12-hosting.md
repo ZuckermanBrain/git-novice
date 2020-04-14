@@ -57,29 +57,3 @@ integrity and quality standards.  While CI is still available in self-hosted
 situations, there is much less setup and maintenance involved with using an
 online service.  Furthermore, such tools are often provided free of charge to
 open source projects, and are also available for private repositories for a fee.
-
-> ## Institutional Barriers
->
-> Sharing is the ideal for science,
-> but many institutions place restrictions on sharing,
-> for example to protect potentially patentable intellectual property.
-> If you encounter such restrictions,
-> it can be productive to inquire about the underlying motivations and
-> either to request an exception for a specific project or domain,
-> or to push more broadly for institutional reform to support more open science.
-{: .callout}
-
-> ## Can My Work Be Public?
->
-> Find out whether you are allowed to host your work openly on a public forge.
-> Can you do this unilaterally,
-> or do you need permission from someone in your institution?
-> If so, who?
-{: .challenge}
-
-> ## Where Can I Share My Work?
->
-> Does your institution have a repository or repositories that you can
-> use to share your papers, data and software? How do institutional repositories
-> differ from services like [arXiV](https://arxiv.org/), [figshare](https://figshare.com/), [GitHub](https://github.com/) or [GitLab](https://about.gitlab.com/)?
-{: .challenge}
