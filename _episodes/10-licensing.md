@@ -15,7 +15,7 @@ keypoints:
 ---
 
 When a repository with source code, a manuscript or other creative
-works becomes public, it should include a file `LICENSE` or
+works becomes public, it should include a file named `LICENSE` or
 `LICENSE.txt` in the base directory of the repository that clearly
 states under which license the content is being made available. This
 is because creative works are automatically eligible for intellectual
@@ -26,8 +26,14 @@ sue you for copyright infringement.
 A license solves this problem by granting rights to others (the
 licensees) that they would otherwise not have. What rights are being
 granted under which conditions differs, often only slightly, from one
-license to another. In practice, a few licenses are by far the most
-popular, and [choosealicense.com](https://choosealicense.com/) will
+license to another.
+
+Before you assign a license to the code or manuscript in your Git repository, verify that you hold the copyright and/or have the right to assign a license.  This step is often overlooked, but is essential to protect yourself from potential legal repercussions in the future.  For instance, the Bayes-Dole Act (see [here](http://ccnmtl.columbia.edu/projects/rcr/rcr_data/foundation/index.html#2_B)) stipulates that certain research products created with grant funding are generally owned by the university, rather than individual researchers.  Academic publishers also sometimes request that the copyright for manuscripts be transferred to them (see [here](https://en.wikipedia.org/wiki/Copyright_policies_of_academic_publishers)), though this is changing as open access journals gain traction.  
+
+Columbia's policy on who owns the copyright for a work produced at the university can be found [here](http://www.columbia.edu/cu/provost/docs/copyright.html), and you can obtain general information from [Copyright Advisory Services](https://copyright.columbia.edu/).  The STAN Project, a major open source initiative in the department of statistics, has a detailed written account about the actions they took to ensure legal compliance [here](https://statmodeling.stat.columbia.edu/2016/08/28/copyright-and-licensing-basics-for-code-and-text/).
+
+Once you've verified that you can assign a license, a few licenses are by far the most
+popular, and [choosealicense.com](https://choosealicense.com/) could
 help you find a common license that suits your needs.  Important
 considerations include:
 
@@ -56,14 +62,6 @@ decision only makes it more complicated later, because each time a new
 collaborator starts contributing, they, too, hold copyright and will
 thus need to be asked for approval once a license is chosen.
 
-> ## Can I Use Open License?
->
-> Find out whether you are allowed to apply an open license to your software.
-> Can you do this unilaterally,
-> or do you need permission from someone in your institution?
-> If so, who?
-{: .challenge}
-
 > ## What licenses have I already accepted?
 >
 > Many of the software tools we use on a daily basis (including in this workshop) are
@@ -74,7 +72,6 @@ thus need to be asked for approval once a license is chosen.
 > - [Git](https://github.com/git/git), the source-code management tool
 > - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
 > - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
-> - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
 {: .challenge}
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
