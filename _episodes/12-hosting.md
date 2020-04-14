@@ -11,8 +11,9 @@ keypoints:
 - "Rules regarding intellectual property and storage of sensitive information apply no matter where code and data are hosted."
 ---
 
-The second big question for groups that want to open up their work is where to
-host their code and data.  One option is for the lab, the department, or the
+In addition to GitHub, there are several alternative ways of to host Git repositories.  We will only mention these alternatives in passing, since the workflows we've described in previous sections are specific to GitHub.  Alternate hosting providers are worth consideration for individuals using the command line version of Git, however, which is substantially more flexible than the GitHub Desktop interface.
+
+One option is for the lab, the department, or the
 university to provide a server, manage accounts and backups, and so on.  The
 main benefit of this is that it clarifies who owns what, which is particularly
 important if any of the material is sensitive (i.e., relates to experiments
@@ -22,38 +23,12 @@ who has spent ten years collecting data would like to be sure that data will
 still be available ten years from now, but that's well beyond the lifespan of
 most of the grants that fund academic infrastructure.
 
-Another option is to purchase a domain and pay an Internet service provider
-(ISP) to host it.  This gives the individual or group more control, and
-sidesteps problems that can arise when moving from one institution to another,
-but requires more time and effort to set up than either the option above or the
-option below.
-
-The third option is to use a public hosting service like
-[GitHub](https://github.com), [GitLab](https://gitlab.com),or
+Another option is to use a competing public hosting service like
+[GitLab](https://gitlab.com),or
 [BitBucket](https://bitbucket.org).
-Each of these services provides a web interface that enables people to create,
-view, and edit their code repositories.  These services also provide
-communication and project management tools including issue tracking, wiki pages,
-email notifications, and code reviews.  These services benefit from economies of
-scale and network effects: it's easier to run one large service well than to run
-many smaller services to the same standard.  It's also easier for people to
-collaborate.  Using a popular service can help connect your project with
-communities already using the same service.
+Similar to GitHub, these services also provide an intuitive web interface that enables people to create,
+view, and edit their code repositories.  The downside of these services is that they do not have the same degree of popularity as GitHub, and as a result fewer scientists and programmers tend to use them except for specific use-cases or projects (i.e., GitHub benefits from network effects).  We currently do not recommend these competitors for these reasons.
 
-As an example, Software Carpentry [is on GitHub]({{ site.swc_github }}) where you can find the [source for this
-page](https://github.com/swcarpentry/git-novice/edit/gh-pages/_episodes/13-hosting.md). Anyone with a GitHub account can suggest changes to this text.
+For manuscript development in particular, platforms such as [Authorea](https://www.authorea.com/) or [Overleaf](https://www.overleaf.com/) provide a more manuscript-centric interface to Git, similar to a standard word processor.  Authorea deals well with multiple text formats (such as LaTeX and Markdown) while Overleaf is specific to manuscripts written in LaTeX.  As of writing (April 2020), OverLeaf requires a paid plan to include collaborators, whereas Authorea does not place a limit on the number of collaborators you can add to free tier plans.
 
-GitHub repositories can also be assigned DOIs, [by connecting its releases to
-Zenodo](https://guides.github.com/activities/citable-code/). For example,
-[`10.5281/zenodo.57467`](https://zenodo.org/record/57467) is the DOI that has
-been "minted" for this introduction to Git.
-
-Using large, well-established services can also help you quickly take advantage
-of powerful tools.  One such tool, continuous integration (CI), can
-automatically run software builds and tests whenever code is committed or pull
-requests are submitted.  Direct integration of CI with an online hosting service
-means this information is present in any pull request, and helps maintain code
-integrity and quality standards.  While CI is still available in self-hosted
-situations, there is much less setup and maintenance involved with using an
-online service.  Furthermore, such tools are often provided free of charge to
-open source projects, and are also available for private repositories for a fee.
+With the exception of manuscript development, for which Authorea and Overleaf may be better options, we recommend remaining with GitHub for your Git repository hosting needs.  If you'd like to create a new repository, please consider locating it within the [Zuckerman Institute's GitHub organization](https://github.com/ZuckermanBrain) (more information about GitHub organizations can be found [here](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-organizations)).  Contact research computing for further information about how to get started with adding your repository to this organization.
