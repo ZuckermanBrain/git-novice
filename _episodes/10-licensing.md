@@ -6,12 +6,13 @@ questions:
 - "What licensing information should I include with my work?"
 objectives:
 - "Explain why adding licensing information to a repository is important."
+- "Learn how to check who owns the copyright for research works"
 - "Choose a proper license."
 - "Explain differences in licensing and social expectations."
 keypoints:
-- "People who incorporate General Public License (GPL'd) software into their own software must make their software also open under the GPL license; most other open licenses do not require this."
-- "The Creative Commons family of licenses allow people to mix and match requirements and restrictions on attribution, creation of derivative works, further sharing, and commercialization."
-- "People who are not lawyers should not try to write licenses from scratch."
+- "Ensure that your manuscript or source code is assigned a license from the onset to avoid issues down the line."
+- "Ensure that you have the legal right to assign a license before assigning one."
+- "Multiple websites list very good options for open source licenses.  Unless you are actively consulting with a lawyer, it is best to use one of these licenses or another established license."
 ---
 
 When a repository with source code, a manuscript or other creative
