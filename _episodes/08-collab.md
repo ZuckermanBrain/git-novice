@@ -40,4 +40,46 @@ Now the three copies of the repository (my local copy, Laurie's local copy, and 
 
 ## Code Review Workflow
 
-**TODO**
+In a code review workflow, a collaborator (such as Laurie) would first make a remote copy of my repository (a process known as [forking](https://en.wikipedia.org/wiki/Fork_(software_development))), clone her remote copy, make some changes to her copy, and then push her changes to her own copy on GitHub.  In this way, there would be four copies of the GitHub repository, two remote copies for both me and Laurie, and two local copies for both of us.
+
+To make a remote copy, Laurie would navigate to the my repository on the GitHub website.  She would then click on the `Fork` button in the upper righthand corner.
+
+![Forking a Repository](../fig/github-fork-1.png)
+
+After Laurie's copy has been made, we can see that GitHub keeps track of where her copy was made from.  We also notice that the number embedded in the `Fork` button has incremented by 1 to reflect the number of copies in existence.
+
+![Forking a Repository](../fig/github-fork-2.png)
+
+If we click `Insights`, followed by `Forks`, we can even see a full tree graph of all the copies of a repository that have been made in GitHub.  In this case, there is only one copy that has been made from the original, but for some repositories on GitHub (such as the `numpy` repository), this graph can become quite large.
+
+![Graph of All Remote Copies on GitHub](../fig/github-fork-3.png)
+
+As mentioned earlier, Laurie would now go through the conventional clone, stage, commit, and push cycle for a Git repository, with her changes pushed to her personal copy on GitHub instead of the main copy.  After her changes have been uploaded to her personal copy on GitHub, she can make sure that they're added to the original copy by opening a *Pull Request*.  A pull request is a method for merging the changes from one version of a Git repository into another, even if they have separate histories.  There are methods for dealing with conflicting changes, which we will discuss in further detail in the next section.
+
+To make a pull request, Laurie would click the "Pull Requests" tab in her remote copy of the repository on GitHub after she's pushed her changes to it.  She would then click the green `New pull request` button.
+
+![Opening a Pull Request](../fig/github-pull-request-1.png)
+
+Laurie will then be presented with a screen in which the differences between her remote copy of the repository and my remote copy of the repository are shown.  If the changes look right, she can then proceed by clicking on the green `Create pull request` button.
+
+![Laurie Reviewing Differences for a Pull Request](../fig/github-pull-request-2.png)
+
+Next, Laurie can provide a descriptive message about what changes she made so that when I review her changes (the next major step) I know in general terms what they are.  When she's done, she can click the green `Create pull request` button again.  Note the dialogue at the top of the screen stating that the change is "Able to be merged".  This indicates that there aren't any conflicting changes between my remote copy and Laurie's remote copy, so Git can reconcile the two seamlessly.
+
+![Laurie Writing a Pull Request Message](../fig/github-pull-request-3.png)
+
+Now that Laurie has made her changes, I can review them on my end, and we can discuss them if necessary in a threaded conversation in the pull request.  Pull requests are analogous to the peer review process but for code or other text documents (and are much less formal).
+
+I do this by clicking on the `Pull requests` tab in my remote copy of the repository on the GitHub website.  I then can click on Laurie's pull request to review it.
+
+![Selecting Laurie's Pull Request](../fig/github-pull-request-4.png)
+
+I can view the specific changes by clicking on the `Files changed` tab.
+
+![Viewing Changes in Laurie's Pull Request](../fig/github-pull-request-5.png)
+
+I can then discuss the changes with Laurie (if necessary) in the `Conversations` tab.  When I'm done, I click the green `Merge pull request` button at the bottom of the conversation thread followed by the ensuing `Confirm merge` button.  
+
+![Conversing in Laurie's Pull Request](../fig/github-pull-request-6.png)
+
+Laurie's changes have now been integrated into the history of the primary repository on GitHub.  As part of the merging process, another commit will be made to reflect the act of merging.
