@@ -13,9 +13,9 @@ keypoints:
 - "Git stores all of its repository data in the `.git` directory."
 ---
 
-Now that we've configured GitHub Desktop to work with our account, let's create our first [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store different versions of our files by keeping track of the differences between text documents.  Click on *New Repository* under the *File* menu or type <kbd>Ctrl</kbd>-<kbd>N</kbd>.  You will now be presented with a prompt with a number of fields (such as the repository name).  In the example below, we will *initialize* a repository named "Big Science".  [Initialization]({{ page.root }}{% link reference.md %}#initialization) is the term that Git uses to indicate that it will start tracking changes amongst files in a folder.  
+Now that we've configured GitHub Desktop to work with our account, let's create our first [repository]({{ page.root }}{% link reference.md %}#repository)—a place where Git can store different versions of our files by keeping track of the differences between text documents.  Click on *New Repository* under the *File* menu or type <kbd>Ctrl</kbd>-<kbd>N</kbd>.  You will now be presented with a prompt with a number of fields (such as the repository name).  In the example below, we will [initialize]({{ page.root }}{% link reference.md %}#initialization) a repository named *Big Science*.  [Initialization]({{ page.root }}{% link reference.md %}#initialization) is the term that Git uses to indicate that it will start tracking changes amongst files in a folder.  
 
-Note that GitHub Desktop automatically replaces spaces with hyphens in repository names.  We can also tell GitHub Desktop to create the repository with a Read Me document, a canned software license, and a file that tells Git to **not** track certain files (*Git Ignore*).  We will be discussing software licensing and blacklisting files later on in more detail.
+Note that GitHub Desktop automatically replaces spaces with hyphens in repository names.  We can also tell GitHub Desktop to create the repository with a Read Me document, a canned software license, and a file that tells Git to **not** track certain files (*[Git Ignore]({{ page.root }}/05-ignore)*).  We will be discussing software licensing and blacklisting files later on in more detail.
 
 ![githubdesktopinit](../fig/github-desktop-init.png)
 
@@ -23,7 +23,7 @@ Clicking on *Create Repository* should bring you to the following screen:
 
 ![githubdesktopinit2](../fig/github-desktop-init-2.png)
 
-Click the button that says *Show in Finder* or *Show in File Explorer*.  Notice that your new repository lives within a folder named *GitHub* that is nested within your home directory.  
+Click the button that says *Show in Finder* or *Show in File Explorer*.  Notice that your new repository lives within a folder named `GitHub` that is nested within your home directory.  
 
 Now, click the button that says *Open in Atom*.  This will open up the project directory in the Atom text editor.
 

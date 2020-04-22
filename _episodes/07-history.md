@@ -10,8 +10,8 @@ objectives:
 - "Identify Git commit numbers."
 - "Compare various versions of tracked files."
 keypoints:
-- "Differences between commits can be examined using the History tab in GitHub Desktop.  You can look at diffs on the GitHub website side by side by right-clicking on a commit and then clicking on `View on GitHub`."
-- "You can examine the state of your repository at a particular time by clicking `Browse files` when comparing differences between files on GitHub's website."
+- "Differences between commits can be examined using the History tab in GitHub Desktop.  You can look at diffs on the GitHub website side by side by right-clicking on a commit and then clicking on *View on GitHub*."
+- "You can examine the state of your repository at a particular time by clicking *Browse files* when comparing differences between files on GitHub's website."
 - "You can recover old versions of files by reverting changes."
 ---
 

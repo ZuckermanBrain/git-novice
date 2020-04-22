@@ -106,7 +106,7 @@ is not scrutinized by Git.
 
 ![atomfolders](../fig/atom-folders.png)
 
-To stage all of the files in `folder-of-files` at the same time, we can use the `Stage All` button, and then commit them.
+To stage all of the files in `folder-of-files` at the same time, we can use the *Stage All* button, and then commit them.
 
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area using the Git Atom extension in the right pane

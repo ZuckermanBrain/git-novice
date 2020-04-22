@@ -145,7 +145,7 @@ If we switch to Atom, however, we'll notice that we `my-great-file` is not avail
 
 ![gitpull4](../fig/git-pull-4.png)
 
-Navigate back to GitHub Desktop and click the button labelled *Fetch origin*.  [Fetching]({{ page.root }}{% link reference.md %}#fetch) is the act of downloading summaries of events in the Git history without actually downloading the changes themselves.  Since `origin` is a conventional name that the local repository gives for the remote repository, to *fetch origin* means to download a log of changes that the remote repository (hosted by GitHub in this case) is aware of, but the local repository isn't.  After you've fetched origin, your window should appear as follows:
+Navigate back to GitHub Desktop and click the button labelled *Fetch origin*.  [Fetching]({{ page.root }}{% link reference.md %}#fetch) is the act of downloading summaries of events in the Git history without actually downloading the changes themselves.  Since `origin` is a conventional name that the local repository gives for the remote repository, to "fetch origin" means to download a log of changes that the remote repository (hosted by GitHub in this case) is aware of, but the local repository isn't.  After you've fetched origin, your window should appear as follows:
 
 ![gitpull5](../fig/git-pull-5.png)
 

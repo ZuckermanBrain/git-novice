@@ -42,3 +42,21 @@ to be shared can and should be stored in a version control system.
 > No previous experience with a command line interface is necessary.
 >
 {: .prereq}
+
+> ## Formatting Notes
+>
+> The following formatting conventions are used in this lesson:
+>
+> *Italics* are used to indicate elements of a graphical interface, such as
+> buttons, dropdowns, or labelled panes.  In cases where there is a named field,
+> _**bold italics**_ indicate the field and regulary *italics* indicate the value
+> that field should take.
+>
+> `Block text` indicates folder names, file names, Git-specific ways to
+> refer to a copy of a file, and code written in a programming language.
+>
+> Hyperlinks are used to link new definitions back to the [glossary]({{ page.root }}{% link reference.md %}).
+>
+> <kbd>Keyboard key</kbd> formatting indicates keys that must be pressed to access some functionality in the GitHub Desktop client.
+>
+{: .callout}

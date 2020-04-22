@@ -68,17 +68,17 @@ We need to find a way to reconcile, or
 
 ![The Conflicting Changes](../fig/conflict.svg)
 
-Let's first take a look at where the conflict lies by opening up the affected document in Atom by clicking `Open in Atom`.
+Let's first take a look at where the conflict lies by opening up the affected document in Atom by clicking *Open in Atom*.
 
 ![GitHub Desktop Shows Merge Conflicts](../fig/git-merge-2.png)
 
-After we've opened our article in Atom, we can see where the conflict occurs.  My change is preceded by `<<<<<<< HEAD`.
-Git has then inserted `=======` as a separator between the conflicting changes
-and marked the end of the content downloaded from GitHub with `>>>>>>>`.
+After we've opened our article in Atom, we can see where the conflict occurs.  My change is preceded by *<<<<<<< HEAD*.
+Git has then inserted *=======* as a separator between the conflicting changes
+and marked the end of the content downloaded from GitHub with *>>>>>>>*.
 (The string of letters and digits after that marker
 identifies the commit we've just downloaded.)
 
-We are presented with three options- we can either use our changes, Laurie's changes, or we can rewrite the title anew.  If we want to use either our changes or Laurie's changes, we can click one of the `Use me` buttons.  
+We are presented with three options- we can either use our changes, Laurie's changes, or we can rewrite the title anew.  If we want to use either our changes or Laurie's changes, we can click one of the *Use me* buttons.  
 
 ![The Merge Conflict in Atom](../fig/git-merge-3.png)
 
@@ -92,7 +92,7 @@ At the end of the pull request, there will be a button that either I or Laurie c
 
 ![The Resolve Conflicts Button in GitHub](../fig/git-merge-5.png)
 
-This will bring us to an editor where we can make necessary edits to harmonize our changes.  When we're done, we click the `Mark as Resolved` button, followed by the `Commit merge`, and `I understand` buttons.  I can then review the pull request and accept it into the main repository as though it were a non-conflicting change.
+This will bring us to an editor where we can make necessary edits to harmonize our changes.  When we're done, we click the *Mark as Resolved* button, followed by the *Commit merge*, and *I understand* buttons.  I can then review the pull request and accept it into the main repository as though it were a non-conflicting change.
 
 ![The Conflict Resolution Editor in GitHub](../fig/git-merge-6.png)
 

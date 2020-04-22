@@ -29,7 +29,7 @@ which means that any changes to documents or code that you upload to
 another Git host server
 in a later lesson will include this information.
 
-The email address used should be the same as the one used when setting up your GitHub account unless you are concerned about privacy. If you do have privacy concerns, please review [GitHub's instructions for keeping your email address private][git-privacy].  If do you elect to use a private email address with GitHub, then use that same email address for the *Email* field (e.g. `username@users.noreply.github.com` replacing `username` with your GitHub one).  Choosing to keep your email address private has the advantage that you will be less targeted by spammers, but with the caveat that other researchers will not be able to find contact information for you as readily.
+The email address used should be the same as the one used when setting up your GitHub account unless you are concerned about privacy. If you do have privacy concerns, please review [GitHub's instructions for keeping your email address private][git-privacy].  If do you elect to use a private email address with GitHub, then use that same email address for the _**Email**_ field (e.g. *username@users.noreply.github.com* replacing *username* with your GitHub one).  Choosing to keep your email address private has the advantage that you will be less targeted by spammers, but with the caveat that other researchers will not be able to find contact information for you as readily.
 
 ![githubdesktopconfig2](../fig/github-desktop-config-2.png)
 
