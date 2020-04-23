@@ -41,44 +41,11 @@ advantages and disadvantages of various hosting providers will be given later on
 > the server hosting your remote repository is offline or otherwise inaccessible (e.g., GitHub may go down, but GitLab would still be available).
 >
 > Each remote in a Git repository has its own unique local name.  By convention, the main centralized
-> copy is called `origin`.
->
-> For the purposes of this tutorial, we will only be dealing with one remote repository.
-{: .callout}
-
-
-TODO: Do we like this version better?
-
-> ## Some more about remotes
->
-> In this episode and the previous one, our local repository has had
-> a single "remote", called `origin`. A remote is a copy of the repository
-> that is hosted somewhere else, that we can push to and pull from, and
-> there's no reason that you have to work with only one. For example,
-> on some large projects you might have your own copy in your own GitHub
-> account (you'd probably call this `origin`) and also the main "upstream"
-> project repository (let's call this `upstream` for the sake of examples).
-> You would pull from `upstream` from time to
-> time to get the latest updates that other people have committed.
->
-> Remember that the name you give to a remote only exists locally. It's
-> an alias that you choose - whether `origin`, or `upstream`, or `fred` -
+> copy is called `origin`.  Remember that the name a remote has only exists locally. It's
+> an alias that you can choose - whether `origin`, or `upstream`, or `fred` -
 > and not something intrinsic to the remote repository.
 >
-> The `git remote` family of commands is used to set up and alter the remotes
-> associated with a repository. Here are some of the most useful ones:
->
-> * `git remote -v` lists all the remotes that are configured (we already used
-> this in the last episode)
-> * `git remote add [name] [url]` is used to add a new remote
-> * `git remote remove [name]` removes a remote. Note that it doesn't affect the
-> remote repository at all - it just removes the link to it from the local repo.
-> * `git remote set-url [name] [newurl]` changes the URL that is associated
-> with the remote. This is useful if it has moved, e.g. to a different GitHub
-> account, or from GitHub to a different hosting service. Or, if we made a typo when
-> adding it!
-> * `git remote rename [oldname] [newname]` changes the local alias by which a remote
-> is known - its name. For example, one could use this to change `upstream` to `fred`.
+> For the purposes of this tutorial, we will only be dealing with one remote repository.
 {: .callout}
 
 Let's start by switching back to the GitHub Desktop application.  Your window should look something like the following:
