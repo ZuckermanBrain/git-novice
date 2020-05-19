@@ -85,7 +85,7 @@ text that we added or subtracted from our text file or program.
 
 ![githubdesktophistory](../fig/github-desktop-history.png)
 
-If you look next the text that says *John Pellman committed*, you'll notice a short alphanumeric code (such as `121ea64`).  This code is a unique identifier for each commit that is made in the Git repository.
+If you look next to the text that says *John Pellman committed*, you'll notice a short alphanumeric code (such as `121ea64`).  This code is a unique identifier for each commit that is made in the Git repository.
 
 If we add more text to our article after we've committed, you'll notice that the new changes appear in the unstaged changes portion of the right pane in Atom.  We can then go through and repeat the process of staging the changes and then committing them to the Git repository.  
 
