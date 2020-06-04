@@ -30,7 +30,7 @@ In general, most programmers find that using third-party hosting
 services like [GitHub](https://github.com), [Bitbucket](https://bitbucket.org) or
 [GitLab](https://gitlab.com/) is the most practical way hold those master copies.  Since we are working
 with GitHub Desktop in these examples, we will proceed with GitHub.  A more thorough treatment of the
-advantages and disadvantages of various hosting providers will be given later on in the [Hosting]({{ page.root }}{% link _episodes/12-hosting.md %}) section.
+advantages and disadvantages of various hosting providers will be given later on in the [Hosting]({{ page.root }}{% link _episodes/13-hosting.md %}) section.
 
 > ## Multiple Remotes
 >
